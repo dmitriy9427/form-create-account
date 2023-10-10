@@ -1,0 +1,73 @@
+@import "./variables";
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: $white;
+  height: 740px;
+
+  &__badge {
+    height: 740px;
+
+    &-img {
+      height: 740px;
+      width: 756px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    padding: 69px 0 60px 100px;
+    max-width: 306px;
+
+    &-logo {
+      margin-bottom: 89px;
+      max-width: 120px;
+    }
+
+    &-title {
+      margin: 0 0 10px 0;
+    }
+
+    // .header__items-subtitle
+
+    &-subtitle {
+      margin-bottom: 40px;
+    }
+
+    &-button {
+      font-family: "Gabarito";
+      font-size: 22px;
+      line-height: 24.42px;
+      background-color: $red;
+      color: $white;
+      border: none;
+      padding: 18px 30px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        background-color: darken($color: $red, $amount: 20);
+      }
+    }
+  }
+  &__link {
+    margin-top: auto;
+    font-size: 18px;
+    line-height: 20px;
+    color: $gray;
+    &-a {
+      color: $red;
+      text-decoration: none;
+      margin-left: 5px;
+      &:hover {
+        cursor: pointer;
+        color: darken($color: $red, $amount: 20);
+        text-decoration: underline;
+      }
+    }
+  }
+}
