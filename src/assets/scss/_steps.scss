@@ -1,0 +1,57 @@
+@import "./variables";
+
+.steps {
+  // .steps__form
+  background-color: white;
+  padding: 20px 0 50px 120px;
+  &__form {
+  }
+
+  // .steps__images
+
+  &__images {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 60px;
+  }
+
+  // .steps__progress
+
+  &__progress {
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    max-width: 650px;
+    width: 100%;
+    background-color: $lightGray;
+  }
+
+  // .steps__sucsess
+
+  &__sucsess {
+  }
+
+  // .steps__image
+
+  &__image {
+    border: 2px solid $lightGray;
+    border-radius: 50%;
+    display: flex;
+    padding: 13px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 100px;
+    z-index: 99;
+    background-color: $white;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .back {
+    background-color: $white;
+    color: $blue;
+    border: 1px solid $lightGray;
+  }
+}

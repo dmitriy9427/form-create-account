@@ -34,6 +34,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
         type: "asset/resource",
+        use: ["url-loader"],
       },
       {
         test: /\.(s*)css/i,
@@ -48,7 +49,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html", // путь к файлу index.html
+      filename: "index.html",
+      template: `./src/html/index.html`, // путь к файлу index.html
+    }),
+    new HtmlWebpackPlugin({
+      filename: "steps.html",
+      template: `./src/html/steps.html`, // путь к файлу index.html
+      chunks: "index",
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),

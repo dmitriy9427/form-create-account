@@ -1,11 +1,14 @@
-@import "./assets/scss/header";
-@import "./assets/scss/geolocation";
-@import "./assets/scss/objectives";
 @import url("https://fonts.googleapis.com/css2?family=Gabarito&family=Nunito:wght@300;400;500;600;700;800;900&display=swap");
+@import "./assets/scss/header";
+@import "./assets/scss/steps";
+@import "./assets/scss/completion";
+@import "./assets/scss/form";
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 
 body {
@@ -13,9 +16,19 @@ body {
   max-width: 1400px;
   min-width: 320px;
   margin: 20px auto;
-  background: #051655;
-  box-sizing: border-box;
-  list-style: none;
-  display: grid;
-  row-gap: 30px;
+  background-color: #051655;
+}
+
+.button {
+  border: none;
+  color: $white;
+  padding: 18px 49px;
+  font-size: 22px;
+  line-height: 24px;
+  background-color: $red;
+}
+
+main {
+  width: 98%;
+  margin: 0 auto;
 }

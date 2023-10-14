@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     padding: 69px 0 60px 100px;
-    max-width: 306px;
+    max-width: 406px;
 
     &-logo {
       margin-bottom: 89px;
@@ -37,6 +37,8 @@
     }
 
     &-button {
+      width: 100%;
+      text-decoration: none;
       font-family: "Gabarito";
       font-size: 22px;
       line-height: 24.42px;
@@ -51,6 +53,10 @@
       &:hover {
         cursor: pointer;
         background-color: darken($color: $red, $amount: 20);
+        svg {
+          transform: translateX(20px);
+          transition: all 0.4s ease;
+        }
       }
     }
   }

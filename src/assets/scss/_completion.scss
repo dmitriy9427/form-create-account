@@ -1,0 +1,56 @@
+.completion {
+  // .completion__label
+
+  &__label {
+    position: relative;
+  }
+
+  // .completion__input
+
+  &__input {
+    max-width: 460px;
+    width: 100%;
+    border: 1px solid $lightGray;
+    padding: 20px 0 20px 65px;
+    outline: none;
+    color: $red;
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    &:focus {
+      border: 1px solid $red;
+    }
+    &:focus + .completion__svg {
+      path {
+        fill: $red;
+      }
+    }
+
+    &:focus::placeholder {
+      color: $red;
+    }
+  }
+
+  // .completion__svg
+
+  &__svg {
+    position: absolute;
+    top: 0px;
+    left: 30px;
+  }
+
+  .title {
+    font-size: 50px;
+    line-height: 55px;
+    color: $blue;
+    font-weight: 400;
+  }
+  .text {
+    font-size: 20px;
+    line-height: 22px;
+    margin: 10px 0 60px;
+    color: $gray;
+  }
+}
