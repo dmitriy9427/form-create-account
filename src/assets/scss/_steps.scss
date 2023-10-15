@@ -53,5 +53,9 @@
     background-color: $white;
     color: $blue;
     border: 1px solid $lightGray;
+
+    &:hover {
+      background-color: darken($color: $white, $amount: 15);
+    }
   }
 }

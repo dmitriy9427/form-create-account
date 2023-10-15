@@ -1,4 +1,9 @@
 .completion {
+  display: none;
+
+  &.active {
+    display: block;
+  }
   // .completion__label
 
   &__label {

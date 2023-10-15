@@ -1,0 +1,58 @@
+@import "./variables";
+.block {
+  margin: 30px 0 0;
+}
+.business {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+
+  &__title {
+    font-size: 25px;
+    line-height: 27px;
+    font-weight: 400;
+    color: $blue;
+  }
+
+  // .business__label
+
+  &__label {
+    border: 1px solid $lightGray;
+    position: relative;
+    padding: 15px 24px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  // .business__text
+
+  &__text {
+    color: $gray;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  &__checkbox {
+    display: none;
+    &:checked + .business__text {
+      color: black;
+    }
+
+    &:checked ~ .br {
+      opacity: 1;
+    }
+  }
+}
+
+.br {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  outline: 2px solid $blue;
+  opacity: 0;
+}

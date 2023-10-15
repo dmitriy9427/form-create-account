@@ -1,0 +1,84 @@
+@import "./variables";
+
+.user {
+  display: none;
+  flex-direction: column;
+  margin-bottom: 122px;
+  // .user_inputs
+
+  &__inputs {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  // .user__label
+
+  &__label {
+    position: relative;
+  }
+
+  // .user__input
+
+  &__input {
+    padding: 20px 65px;
+    border: 1px solid $lightGray;
+    max-width: 460px;
+    width: 100%;
+    outline: none;
+
+    &:focus {
+      border: 1px solid $red;
+      outline: none;
+    }
+
+    &:focus::placeholder {
+      color: $red;
+    }
+
+    &:focus ~ .user__icon {
+      path {
+        fill: $red;
+      }
+    }
+
+    &::placeholder {
+      font-size: 18px;
+      line-height: 20px;
+      color: $gray;
+    }
+  }
+
+  // .user__icon
+
+  &__icon {
+    position: absolute;
+    top: 18px;
+    left: 30px;
+  }
+
+  // .user__textarea
+
+  &__textarea {
+    max-width: 930px;
+    width: 100%;
+    border: 1px solid $lightGray;
+    padding: 20px 0 0 30px;
+
+    &:focus {
+      border: 1px solid $red;
+      outline: none;
+    }
+
+    &:focus::placeholder {
+      color: $red;
+    }
+
+    &::placeholder {
+      font-size: 18px;
+      line-height: 20px;
+      color: $gray;
+    }
+  }
+}

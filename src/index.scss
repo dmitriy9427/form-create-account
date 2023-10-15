@@ -3,6 +3,10 @@
 @import "./assets/scss/steps";
 @import "./assets/scss/completion";
 @import "./assets/scss/form";
+@import "./assets/scss/profile";
+@import "./assets/scss/business";
+@import "./assets/scss/userform.scss";
+@import "./assets/scss/finish";
 
 * {
   margin: 0;
@@ -26,6 +30,12 @@ body {
   font-size: 22px;
   line-height: 24px;
   background-color: $red;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($color: $red, $amount: 15);
+  }
 }
 
 main {

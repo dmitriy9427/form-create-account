@@ -21,8 +21,6 @@ module.exports = {
   },
   module: {
     rules: [
-      // rules — это массив правил
-      // добавим в него объект правил для бабеля
       {
         // регулярное выражение, которое ищет все js файлы
         test: /\.js$/,
@@ -34,7 +32,6 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
         type: "asset/resource",
-        use: ["url-loader"],
       },
       {
         test: /\.(s*)css/i,

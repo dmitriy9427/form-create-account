@@ -61,6 +61,25 @@
     }
   }
 
+  // .form__check
+
+  &__check {
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: 1px solid $lightGray;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      opacity: 0;
+    }
+  }
+
   // .form__text
 
   &__text {
@@ -83,6 +102,13 @@
 
     &:checked ~ .border {
       opacity: 1;
+    }
+
+    &:checked + .form__check {
+      background-color: $red;
+      img {
+        opacity: 1;
+      }
     }
   }
 }
