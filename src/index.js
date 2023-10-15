@@ -1,17 +1,63 @@
 import "./index.scss";
-const radioBtns = document.querySelectorAll(".form__input");
-const labels = document.querySelectorAll(".form__label");
 
-for (let i = 0; i < radioBtns.length; i++) {
-  for (let j = 0; j < labels.length; j++) {
-    radioBtns[i].onchange = function () {
-      if (radioBtns[i].checked === true) {
-        labels[j].style.backgroundColor = "white";
-        console.log(labels[j]);
-        console.log("поставил");
-      } else {
-        labels[j].style.backgroundColor = "lightGray";
+(function stepForm() {
+  const steps = document.querySelectorAll(".completion");
+  const nextBtn = document.querySelector(".next");
+  const backBtn = document.querySelector(".back");
+  const stepForm = document.querySelector(".steps__form");
+  const stepsNumbers = document.querySelectorAll(".steps__image");
+  const progress = document.querySelector(".steps__sucsess");
+  const finish = document.querySelector(".finish");
+
+  let stepNumber = 0;
+
+  if (window.location.href === "http://localhost:3030/steps.html") {
+    stepForm.addEventListener("submit", (e) => e.preventDefault());
+    nextBtn.onclick = () => {
+      if (stepNumber < steps.length - 1) {
+        stepNumber++;
+        updateStep();
       }
     };
+
+    backBtn.onclick = () => {
+      stepNumber--;
+
+      stepsNumbers[stepNumber + 1].classList.remove("active-image");
+
+      updateStep();
+    };
+    function updateStep() {
+      steps.forEach((step) => {
+        step.classList.contains("active") && step.classList.remove("active");
+      });
+
+      steps[stepNumber].classList.add("active");
+      stepsNumbers[stepNumber].classList.add("active-image");
+
+      if (stepNumber === 0) {
+        backBtn.style.display = "none";
+      } else if (stepNumber === steps.length - 1) {
+        nextBtn.textContent = "Complete";
+
+        nextBtn.addEventListener("click", () => {
+          finish.style.display = "flex";
+          nextBtn.style.display = "none";
+          backBtn.style.display = "none";
+          stepForm.style.display = "none";
+          steps[stepNumber].style.display = "none";
+        });
+      } else {
+        nextBtn.textContent = "Next";
+        nextBtn.style.display = "";
+        backBtn.style.display = "";
+      }
+
+      const actives = document.querySelectorAll(".active-image");
+      const persent = ((actives.length - 1) / (steps.length - 1)) * 100 + "%";
+
+      progress.style.width = persent;
+    }
+    updateStep();
   }
-}
+})();
