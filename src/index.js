@@ -8,17 +8,25 @@ import "./index.scss";
   const stepsNumbers = document.querySelectorAll(".steps__image");
   const progress = document.querySelector(".steps__sucsess");
   const finish = document.querySelector(".finish");
+  const createBtn = document.querySelector(".header__items-button");
+  const header = document.querySelector(".header");
+  const stepsBlock = document.querySelector(".steps");
 
   let stepNumber = 0;
 
-  if (window.location.href === "http://localhost:3030/steps.html") {
-    stepForm.addEventListener("submit", (e) => e.preventDefault());
-    nextBtn.onclick = () => {
-      if (stepNumber < steps.length - 1) {
-        stepNumber++;
-        updateStep();
-      }
-    };
+  createBtn.addEventListener("click", () => {
+    header.style.display = "none";
+    stepsBlock.style.display = "block";
+    steps[stepNumber].classList.add("active");
+    backBtn.style.display = "none";
+  });
+
+  stepForm.addEventListener("submit", (e) => e.preventDefault());
+  nextBtn.onclick = () => {
+    if (stepNumber < steps.length - 1) {
+      stepNumber++;
+      updateStep();
+    }
 
     backBtn.onclick = () => {
       stepNumber--;
@@ -59,5 +67,5 @@ import "./index.scss";
       progress.style.width = persent;
     }
     updateStep();
-  }
+  };
 })();

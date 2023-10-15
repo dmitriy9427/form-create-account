@@ -49,11 +49,11 @@ module.exports = {
       filename: "index.html",
       template: `./src/html/index.html`, // путь к файлу index.html
     }),
-    new HtmlWebpackPlugin({
-      filename: "steps.html",
-      template: `./src/html/steps.html`, // путь к файлу index.html
-      chunks: "index",
-    }),
+    // new HtmlWebpackPlugin({
+    //   filename: "steps.html",
+    //   template: `./src/html/steps.html`, // путь к файлу index.html
+    //   chunks: "index",
+    // }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
   ],
