@@ -6,6 +6,11 @@
   background-color: $white;
   max-height: 740px;
 
+  @media (max-width: 450px) {
+    position: absolute;
+    top: 30%;
+  }
+
   &__badge {
     max-width: 746px;
     width: 100%;
