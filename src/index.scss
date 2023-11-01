@@ -21,6 +21,12 @@ body {
   min-width: 320px;
   margin: 20px auto;
   background-color: #051655;
+
+  @media (max-width: 484px) {
+    position: absolute;
+    top: 30%;
+    margin: 0 7px;
+  }
 }
 
 .button {
