@@ -11,9 +11,16 @@
 
   &__labels {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 360px));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 360px));
     gap: 20px;
-    margin: 20px 0 82px;
+    margin: 20px auto 82px;
+
+    @media (max-width: 888px) {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      width: 100%;
+    }
   }
 
   // .form__label

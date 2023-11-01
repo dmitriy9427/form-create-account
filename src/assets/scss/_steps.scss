@@ -4,17 +4,29 @@
   display: none;
   // .steps__form
   background-color: white;
-  padding: 20px 0 50px 120px;
-  &__form {
+  padding: 20px 10px 50px 120px;
+
+  @media (max-width: 888px) {
+    padding-left: 80px;
   }
 
+  @media (max-width: 778px) {
+    padding-left: 50px;
+  }
+
+  @media (max-width: 430px) {
+    padding-left: 10px;
+  }
   // .steps__images
 
   &__images {
     position: relative;
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     margin-bottom: 60px;
+    max-width: 690px;
+    width: 100%;
   }
 
   // .steps__progress
@@ -26,6 +38,10 @@
     max-width: 650px;
     width: 100%;
     background-color: $lightGray;
+
+    @media (max-width: 745px) {
+      width: 100%;
+    }
   }
 
   // .steps__sucsess
@@ -48,10 +64,17 @@
     padding: 13px;
     justify-content: center;
     align-items: center;
-    margin-right: 100px;
     z-index: 99;
     background-color: $white;
     transition: all 0.8s ease;
+
+    @media (max-width: 545px) {
+      padding: 8px;
+    }
+
+    @media (max-width: 405px) {
+      padding: 6px;
+    }
     &:last-child {
       margin-right: 0;
     }
